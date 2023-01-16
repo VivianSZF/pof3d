@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="PoF3D Project Page">
+  <meta name="keywords" content="GAN, Controllable Synthesis">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning 3D-aware Image Synthesis with Unknown Pose Distribution</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://genforce.github.io/volumegan/">
+              VolumeGAN
+            </a>
+            <a class="navbar-item" href="https://vivianszf.github.io/geod/">
+              GeoD
+            </a>
+            <a class="navbar-item" href="https://snap-research.github.io/discoscene/">
+              DisCoScene
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="publication-title">Learning 3D-aware Image Synthesis <br> with Unknown Pose Distribution</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://vivianszf.github.io">Zifan Shi</a><sup>*1</sup>,</span>
+              <span class="author-block">
+                <a href="https://shenyujun.github.io/">Yujun Shen</a><sup>*2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://justimyhxu.github.io">Yinghao Xu</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://pengsida.net">Sida Peng</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://yiyiliao.github.io">Yiyi Liao</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.hk/citations?user=mbpgOmEAAAAJ&hl=zh-CN#">Sheng Guo</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://cqf.io/">Qifeng Chen</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/dyyeung/home">Dit-Yan Yeung</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>HKUST &nbsp&nbsp</span>
+              <span class="author-block"><sup>2</sup>Ant Group &nbsp&nbsp</span>
+              <span class="author-block"><sup>3</sup>CUHK &nbsp&nbsp</span>
+              <span class="author-block"><sup>4</sup>ZJU</span>
+              <br>
+              <span class="author-block">(* indicates equal contribution)</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                </span>
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/xxxxx" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=nvlyAElC8eE"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Demo</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/VivianSZF/pof3d"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div class="teaser">
+          <img src="./assets/teaser.jpg">
+        </div>
+        <h2 class="subtitle has-text-centered">
+           Images and geometry synthesized by <b>PoF3D</b> under random views, <br><i>without any pose prior</i>.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-widescreen">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+
+              Existing methods for 3D-aware image synthesis largely depend on the 3D pose distribution pre-estimated on the 
+              training set. An inaccurate estimation may mislead the model into learning faulty geometry. This work proposes
+              <b>PoF3D</b> that frees generative radiance fields from the requirements of 3D pose priors. We first equip the generator
+              with an efficient pose learner, which is able to infer a pose from a latent code, to approximate the underlying true pose
+              distribution automatically. We then assign the discriminator a task to learn pose distribution under the supervision
+              of the generator and to differentiate real and synthesized images with the predicted pose as the condition.
+              <p>
+
+              <div class="teaser">
+                <img src="./assets/framework.jpg">
+              </div>
+
+              <p>
+                The pose-free generator and the pose-aware discriminator are jointly trained in an adversarial manner. Extensive results
+                on a couple of datasets confirm that the performance of our approach, regarding both image quality and geometry
+                quality, is on par with state of the art. To our best knowledge, PoF3D demonstrates the feasibility of learning
+                high-quality 3D-aware image synthesis <i>without using 3D pose priors</i> for the first time.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+    </div>
+  </section>
+
+
+  <section class="section">
+    <!-- <div class="hero-body"> -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-4">Syntheses on FFHQ</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <div class="teaser">
+                <img src="./assets/ffhq1.jpg">
+              </div>
+            </div>
+            <div class="item item-clevr">
+              <div class="teaser">
+                <img src="./assets/ffhq2.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Syntheses on Cats</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <div class="teaser">
+                <img src="./assets/cats1.jpg">
+              </div>
+            </div>
+            <div class="item item-clevr">
+              <div class="teaser">
+                <img src="./assets/cats2.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-4">Syntheses on ShapeNet Cars</h2>
+        <div class="container" width=700px>
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-clevr">
+              <div class="teaser">
+                <img src="./assets/car1.jpg">
+              </div>
+            </div>
+            <div class="item item-clevr">
+              <div class="teaser">
+                <img src="./assets/car2.jpg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="columns is-centered has-text-centered">
+      <div class="container is-max-widescreen">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-4">Demo Video</h2>
+            <div class="publication-video">
+              <iframe src="https://www.youtube.com/embed/nvlyAElC8eE" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <div class="cit_cont">
+        <pre class="cit">@article{shi2023pof3d,
+    title   = {Learning 3D-aware Image Synthesis with Unknown Pose Distribution},
+    author  = {Shi, Zifan and Shen, Yujun, and Xu, Yinghao and Peng, Sida and Liao, Yiyi and Guo, Sheng and Chen, Qifeng and Dit-Yan Yeung},
+    journal = {arxiv: xxxxx},
+    year    = {2023}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column">
+
+          <div class="content has-text-justified">
+            <p>
+              The website template was adapted from <a href="https://nerfies.github.io/">Nerfies</a>. We thank the authors for sharing the templates.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
