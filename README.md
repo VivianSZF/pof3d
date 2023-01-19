@@ -8,14 +8,14 @@ Figure: Framework of PoF3D, which consists of a pose-free generator and a pose-a
 
 > **Learning 3D-aware Image Synthesis with Unknown Pose Distribution** <br>
 > Zifan Shi*, Yujun Shen*, Yinghao Xu, Sida Peng, Yiyi Liao, Sheng Guo, Qifeng Chen, Dit-Yan Yeung <br>
-> *arXiv: xxx* <br>
+> *arXiv: 2301.07702* <br>
 > (* indicates equal contribution)
 
 ![image](./docs/assets/teaser.jpg)
 
 **Figure:** Images and geometry synthesized by <b>PoF3D</b> under random views, <br><i>without any pose prior</i>.
 
-[[Paper](https://arxiv.org/abs/xxxx)]
+[[Paper](https://arxiv.org/abs/2301.07702)]
 [[Project Page](https://vivianszf.github.io/pof3d/)]
 
 This work proposes *PoF3D* that frees generative radiance fields from the requirements of 3D pose priors. We first equip the generator
@@ -49,7 +49,7 @@ Syntheses on ShapeNet Cars.
 @article{shi2023pof3d,
   title   = {Learning 3D-aware Image Synthesis with Unknown Pose Distribution},
   author  = {Shi, Zifan and Shen, Yujun, and Xu, Yinghao and Peng, Sida and Liao, Yiyi and Guo, Sheng and Chen, Qifeng and Dit-Yan Yeung},
-  journal = {arXiv:2301.04604},
+  journal = {arXiv:2301.07702},
   year    = {2023}
 }
 ```
