@@ -8,15 +8,16 @@ Figure: Framework of PoF3D, which consists of a pose-free generator and a pose-a
 
 > **Learning 3D-aware Image Synthesis with Unknown Pose Distribution** <br>
 > Zifan Shi*, Yujun Shen*, Yinghao Xu, Sida Peng, Yiyi Liao, Sheng Guo, Qifeng Chen, Dit-Yan Yeung <br>
-> *arXiv: 2301.07702* <br>
+> *CVPR 2023* <br>
 > (* indicates equal contribution)
 
 ![image](./docs/assets/teaser.jpg)
 
 **Figure:** Images and geometry synthesized by <b>PoF3D</b> under random views, <br><i>without any pose prior</i>.
 
-[[Paper](https://arxiv.org/abs/2301.07702)]
+[[Paper](https://openaccess.thecvf.com/content/CVPR2023/papers/Shi_Learning_3D-Aware_Image_Synthesis_With_Unknown_Pose_Distribution_CVPR_2023_paper.pdf)]
 [[Project Page](https://vivianszf.github.io/pof3d/)]
+[[Supp](https://openaccess.thecvf.com/content/CVPR2023/supplemental/Shi_Learning_3D-Aware_Image_CVPR_2023_supplemental.pdf)]
 
 This work proposes *PoF3D* that frees generative radiance fields from the requirements of 3D pose priors. We first equip the generator
 with an efficient pose learner, which is able to infer a pose from a latent code, to approximate the underlying true pose
@@ -41,7 +42,43 @@ Syntheses on ShapeNet Cars.
 <img src="./docs/assets/car1.jpg"/>
 
 
-## Code Coming Soon
+## Requirements
+We test our code on PyTorch 1.9.1 and CUDA toolkit 11.3. Please follow the instructions on [https://pytorch.org](https://pytorch.org) for installation. Other dependencies can be installed with the following command:
+```Shell
+    pip install -r requirements.txt
+```
+Optionally, you can install neural renderer for GeoD support (which is not used in the paper):
+```
+    cd neural_renderer
+    pip install .
+```
+
+## Data preparation
+FFHQ and ShapeNet cars are borrowed from [EG3D](https://github.com/NVlabs/eg3d). Please follow their instructions to get the dataset. Cats dataset can be downloaded from the [link](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zshiaj_connect_ust_hk/EtHy5-c8lQRDhyqRHYua99cBrtm62OsyRFY5Pol6q5fKMA?e=d2vvGz).
+
+## Training
+We provide the scripts for training on FFHQ, Cats and ShapeNet Cars dataset. Please update the path to the dataset in the scripts. The training can be started with:
+```Shell
+    ./ffhq.sh or ./cats.sh or ./shapenet_cars.sh
+```
+Note that we provide the [GeoD](https://github.com/vivianszf/geod) supervision option on FFHQ and Cats dataset. But using the default configuration will not use it (which is the configuration we used in the paper). If you would like to try with GeoD, please modify the corresponding arguments.
+
+## Inference
+The pretrained models are available [here](https://hkustconnect-my.sharepoint.com/:f:/g/personal/zshiaj_connect_ust_hk/Ejz7GDivpzBKtrBjnnEnr90B9D400CqFWva6Wh9en6WcrA?e=hgg9Jy).
+
+To perform the inference, you can use the command:
+```Shell
+    python gen_samples_pose.py --outdir ./results 
+            --trunc 0.7  
+            --shapes true 
+            --seeds 0-10 
+            --network ${CHECKPOINT_PATH}  
+            --shape-res 128 
+            --dataset ${DATASET}
+```
+where `DATASET` denotes the dataset name when training the model, it can be 'ffhq', 'cats', or 'shapenetcars'. `CHECKPOINT_PATH` should be replaced with the path to the checkpoint.
+
+
 
 ## BibTeX
 
@@ -49,7 +86,7 @@ Syntheses on ShapeNet Cars.
 @article{shi2023pof3d,
   title   = {Learning 3D-aware Image Synthesis with Unknown Pose Distribution},
   author  = {Shi, Zifan and Shen, Yujun, and Xu, Yinghao and Peng, Sida and Liao, Yiyi and Guo, Sheng and Chen, Qifeng and Dit-Yan Yeung},
-  journal = {arXiv:2301.07702},
+  booktitle = {CVPR},
   year    = {2023}
 }
 ```

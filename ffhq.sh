@@ -1,0 +1,20 @@
+python train_geod.py \
+    --outdir output_folder \
+    --cfg ffhq \
+    --data /input/datasets/ffhq_eg3d/FFHQ_512.zip \
+    --gpus 8 \
+    --batch 32 \
+    --gamma 1 \
+    --dataset_resolution 256 \
+    --neural_rendering_resolution_initial 64 \
+    --neural_rendering_resolution_final 64 \
+    --superres True \
+    --dual_discrimination True \
+    --flip_to_disd_weight 1.0 \
+    --flip_type flip_both \
+    --lr_multiplier 0.01 \
+    --lr_multiplier_pose 0.01 \
+    --gen_pose_cond True \
+    --dis_pose_cond True \
+    --dis_cam_weight 2.0 \
+    --pose_gd_weight 1.0
