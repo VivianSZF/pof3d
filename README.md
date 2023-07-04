@@ -27,21 +27,6 @@ of our approach, regarding both image quality and geometry quality, is on par wi
 demonstrates the feasibility of learning high-quality 3D-aware image synthesis <i>without using 3D pose priors</i> for the first time.
 
 
-## Results
-
-
-Syntheses on FFHQ.
-<img src="./docs/assets/ffhq1.jpg"/>
-
-
-Syntheses on Cats.
-<img src="./docs/assets/cats1.jpg"/>
-
-
-Syntheses on ShapeNet Cars.
-<img src="./docs/assets/car1.jpg"/>
-
-
 ## Requirements
 We test our code on PyTorch 1.9.1 and CUDA toolkit 11.3. Please follow the instructions on [https://pytorch.org](https://pytorch.org) for installation. Other dependencies can be installed with the following command:
 ```Shell
@@ -68,15 +53,31 @@ The pretrained models are available [here](https://hkustconnect-my.sharepoint.co
 
 To perform the inference, you can use the command:
 ```Shell
-    python gen_samples_pose.py --outdir ./results 
+    python gen_samples_pose.py --outdir ${OUTDIR} 
             --trunc 0.7  
             --shapes true 
-            --seeds 0-10 
+            --seeds 0-100 
             --network ${CHECKPOINT_PATH}  
             --shape-res 128 
             --dataset ${DATASET}
 ```
-where `DATASET` denotes the dataset name when training the model, it can be 'ffhq', 'cats', or 'shapenetcars'. `CHECKPOINT_PATH` should be replaced with the path to the checkpoint.
+where `DATASET` denotes the dataset name when training the model. It can be 'ffhq', 'cats', or 'shapenetcars'. `CHECKPOINT_PATH` should be replaced with the path to the checkpoint. `OUTDIR` denotes the folder to save the outputs.
+
+
+
+## Results
+
+
+Syntheses on FFHQ.
+<img src="./docs/assets/ffhq1.jpg"/>
+
+
+Syntheses on Cats.
+<img src="./docs/assets/cats1.jpg"/>
+
+
+Syntheses on ShapeNet Cars.
+<img src="./docs/assets/car1.jpg"/>
 
 
 
